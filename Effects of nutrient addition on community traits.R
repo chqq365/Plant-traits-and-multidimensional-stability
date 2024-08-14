@@ -296,7 +296,7 @@ sp.nutnet.w.na.omit.with.LDMC<-sp.nutnet.w %>% filter_at(vars("Leaf C", "Leaf N"
 pca.r.with.LDMC<-PCA(sp.nutnet.w.na.omit.with.LDMC[,c("Leaf C", "Leaf N", "Leaf P", "SLA", "LDMC")], scale=T, graph=F)
 summary(pca.r.with.LDMC)## 
 (pp2<-fviz_pca_biplot(pca.r.with.LDMC, label = "var", alpha.ind =0.5, pointsize=2, title = paste0("PCA based on ", nrow(sp.nutnet.w.na.omit.with.LDMC), " species having all traits (in total ", n.spp, " species occurred)"))+theme_bw(base_size=18)+mt)
-ggsave(pp2, width=11,height=6.64, file="pca among compiled traits at 10 nutnet sites.png")
+ ggsave(pp2, width=11,height=6.64, file="pca among compiled traits at 10 nutnet sites.png")
 
 # including all these traits reduces number of species strongly. 
 (loadings <- as.data.frame(pca.r$ind$coord))
